@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1795082054932" clover="3.2.0">
+  <project timestamp="1795082054932" name="All files">
+    <metrics statements="13" coveredstatements="13" conditionals="15" coveredconditionals="15" methods="3" coveredmethods="3" elements="31" coveredelements="31" complexity="0" loc="13" ncloc="13" packages="1" files="1" classes="1"/>
+    <file name="LoginForm.vue" path="C:\Users\Teun\Documents\script\projecten\vue-testing\src\components\LoginForm.vue">
+      <metrics statements="13" coveredstatements="13" conditionals="15" coveredconditionals="15" methods="3" coveredmethods="3"/>
+      <line num="2" count="9" type="stmt"/>
+      <line num="7" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="17" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="32" count="4" type="stmt"/>
+      <line num="33" count="4" type="stmt"/>
+      <line num="34" count="4" type="stmt"/>
+      <line num="36" count="4" type="stmt"/>
+      <line num="40" count="4" type="stmt"/>
+      <line num="42" count="2" type="stmt"/>
+      <line num="45" count="2" type="cond" truecount="4" falsecount="0"/>
+      <line num="46" count="1" type="stmt"/>
+      <line num="47" count="1" type="stmt"/>
+      <line num="51" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
