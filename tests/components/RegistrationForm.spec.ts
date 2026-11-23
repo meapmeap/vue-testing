@@ -75,7 +75,7 @@ describe('RegistrationForm', () => {
         const acceptTermsInput = wrapper.find('#acceptTerms');
 
         // Act
-        await acceptTermsInput.setChecked(true);
+        await acceptTermsInput.setValue(true);
 
         // Assert
         expect((acceptTermsInput.element as HTMLInputElement).checked).toBe(true);
@@ -126,7 +126,7 @@ describe('RegistrationForm', () => {
         await emailInput.setValue('user@example.com');
         await passwordInput.setValue('short');
         await confirmPasswordInput.setValue('short');
-        await acceptTermsInput.setChecked(true);
+        await acceptTermsInput.setValue(true);
         await form.trigger('submit');
 
         // Assert
@@ -147,7 +147,7 @@ describe('RegistrationForm', () => {
         await emailInput.setValue('user@example.com');
         await passwordInput.setValue('password123');
         await confirmPasswordInput.setValue('different123');
-        await acceptTermsInput.setChecked(true);
+        await acceptTermsInput.setValue(true);
         await form.trigger('submit');
 
         // Assert
@@ -187,7 +187,7 @@ describe('RegistrationForm', () => {
         await emailInput.setValue('user@example.com');
         await passwordInput.setValue('password123');
         await confirmPasswordInput.setValue('password123');
-        await acceptTermsInput.setChecked(true);
+        await acceptTermsInput.setValue(true);
         await form.trigger('submit');
 
         // Assert
@@ -215,7 +215,7 @@ describe('RegistrationForm', () => {
         await emailInput.setValue('user@example.com');
         await passwordInput.setValue('password123');
         await confirmPasswordInput.setValue('password123');
-        await acceptTermsInput.setChecked(true);
+        await acceptTermsInput.setValue(true);
         await form.trigger('submit');
 
         // Assert
@@ -234,7 +234,7 @@ describe('RegistrationForm', () => {
         await emailInput.setValue('user@example.com');
         await passwordInput.setValue('password123');
         await confirmPasswordInput.setValue('password123');
-        await acceptTermsInput.setChecked(true);
+        await acceptTermsInput.setValue(true);
         await form.trigger('submit');
 
         // Assert
@@ -254,7 +254,7 @@ describe('RegistrationForm', () => {
         await emailInput.setValue('user@example.com');
         await passwordInput.setValue('password123');
         await confirmPasswordInput.setValue('password123');
-        await acceptTermsInput.setChecked(true);
+        await acceptTermsInput.setValue(true);
         await form.trigger('submit');
         await form.trigger('submit');
 
@@ -277,7 +277,7 @@ describe('RegistrationForm', () => {
         await emailInput.setValue('user@example.com');
         await passwordInput.setValue('short');
         await confirmPasswordInput.setValue('short');
-        await acceptTermsInput.setChecked(true);
+        await acceptTermsInput.setValue(true);
         await form.trigger('submit');
         // Act: mismatch
         await passwordInput.setValue('password123');
@@ -285,7 +285,7 @@ describe('RegistrationForm', () => {
         await form.trigger('submit');
         // Act: terms unchecked
         await confirmPasswordInput.setValue('password123');
-        await acceptTermsInput.setChecked(false);
+        await acceptTermsInput.setValue(false);
         await form.trigger('submit');
 
         // Assert
@@ -305,7 +305,7 @@ describe('RegistrationForm', () => {
         await emailInput.setValue('user@example.com');
         await passwordInput.setValue('password123');
         await confirmPasswordInput.setValue('password123');
-        await acceptTermsInput.setChecked(true);
+        await acceptTermsInput.setValue(true);
         await form.trigger('submit');
 
         // Assert
@@ -334,7 +334,7 @@ describe('RegistrationForm', () => {
         await emailInput.setValue('user@example.com');
         await passwordInput.setValue('password123');
         await confirmPasswordInput.setValue('password123');
-        await acceptTermsInput.setChecked(true);
+        await acceptTermsInput.setValue(true);
         await form.trigger('submit');
 
         // Assert

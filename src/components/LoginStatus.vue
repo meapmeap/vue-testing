@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineProps<{
-    status: 'loggedIn' | 'loggedOut' | 'loading';
+    status: 'loggedIn' | 'loggedOut' | 'loading' | string;
 }>();
 </script>
 

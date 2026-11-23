@@ -76,6 +76,6 @@ describe('UserCard', () => {
         await wrapper.getByDataTest('delete-button').trigger('click');
 
         // Assert
-        expect(wrapper.emitted('delete')?.[0]).toStrictEqual([[]]);
+        expect(wrapper.emitted('delete')?.[0]).toStrictEqual([]);
     });
 });

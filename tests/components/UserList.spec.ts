@@ -33,6 +33,28 @@ describe('UserList', () => {
         expect(emails).toEqual(['alice@example.com', 'bob@example.com', 'charlie@example.com']);
     });
 
+    it('should display the first user as the first item', () => {
+        // Arrange
+        const wrapper = shallowMount(UserList, {props: {users}});
+
+        // Act
+        const firstUserName = wrapper.findAll('[data-test="user-name"]')[0]?.text();
+
+        // Assert
+        expect(firstUserName).toBe(users[0].name);
+    });
+
+    it('should display the first user email as the first item', () => {
+        // Arrange
+        const wrapper = shallowMount(UserList, {props: {users}});
+
+        // Act
+        const firstUserEmail = wrapper.findAll('[data-test="user-email"]')[0]?.text();
+
+        // Assert
+        expect(firstUserEmail).toBe(users[0].email);
+    });
+
     it('should show empty state when no users', () => {
         // Arrange
         const wrapper = shallowMount(UserList, {props: {users: []}});
@@ -63,25 +85,33 @@ describe('UserList', () => {
         expect(userItems).toHaveLength(0);
     });
 
-    it('should display the first user as the first item', () => {
+    it('should not show the empty state when the users array is not empty', () => {
         // Arrange
         const wrapper = shallowMount(UserList, {props: {users}});
 
-        // Act
-        const firstUserName = wrapper.findAll('[data-test="user-name"]')[0]?.text();
-
         // Assert
-        expect(firstUserName).toBe(users[0].name);
+        expect(wrapper.find('[data-test="empty-state"]').exists()).toBe(false);
     });
 
-    it('should display the first user email as the first item', () => {
+    it('should render a delete button for each user', () => {
         // Arrange
         const wrapper = shallowMount(UserList, {props: {users}});
 
         // Act
-        const firstUserEmail = wrapper.findAll('[data-test="user-email"]')[0]?.text();
+        const deleteButtons = wrapper.findAll('[data-test="delete-button"]');
 
         // Assert
-        expect(firstUserEmail).toBe(users[0].email);
+        expect(deleteButtons).toHaveLength(users.length);
+    });
+
+    it('should emit delete event with the user id when delete button is clicked', async () => {
+        // Arrange
+        const wrapper = shallowMount(UserList, {props: {users}});
+
+        // Act
+        await wrapper.findAll('[data-test="delete-button"]')[0].trigger('click');
+
+        // Assert
+        expect(wrapper.emitted('delete')?.[0]).toStrictEqual([users[0].id]);
     });
 });
